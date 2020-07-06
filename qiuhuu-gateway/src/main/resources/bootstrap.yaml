@@ -1,0 +1,7 @@
+server:
+  port: 9527
+spring:
+  profiles:
+    active: dev
+  application:
+    name: qiuhuu-gateway

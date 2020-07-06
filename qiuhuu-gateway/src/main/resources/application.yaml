@@ -1,0 +1,4 @@
+mybatis:
+  type-aliases-package: com.qiuhuu.gateway.domain.entity
+  mapper-locations: classpath:mybatis/mapping/*.xml
+  config-location: classpath:mybatis/mybatis.xml
