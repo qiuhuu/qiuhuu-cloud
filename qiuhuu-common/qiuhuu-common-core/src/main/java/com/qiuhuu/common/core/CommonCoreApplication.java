@@ -9,7 +9,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @date : 2020/7/2 11:30
  **/
 @SpringBootApplication
-@EnableSwagger2
 public class CommonCoreApplication {
 
     public static void main(String[] args) {

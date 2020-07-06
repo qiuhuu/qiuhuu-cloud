@@ -1,5 +1,6 @@
 package com.qiuhuu.gateway;
 
+import io.swagger.annotations.SwaggerDefinition;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
@@ -14,7 +15,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringCloudApplication
 @ComponentScan("com.qiuhuu")
 @MapperScan("com.qiuhuu.gateway.domain.dao")
-@EnableSwagger2
 public class GatewayApplication {
     public static void main(String[] args) {
         try {
