@@ -5,3 +5,16 @@ spring:
     active: dev
   application:
     name: qiuhuu-gateway
+  cloud:
+    consul:
+      discovery:
+        health-check-path: /actuator/health  #检测实例健康
+        health-check-interval: 10s   #每隔10s检查
+#        hostname: 127.0.0.1    #配置实例地址
+        register: true  #自动注册
+        service-name: ${spring.application.name} #实例名称
+      host: 192.168.154.99 #consul地址
+      port: 8500  #consul端口
+      config:
+        enabled: true  #是否开启配置中心
+        format: yaml   #配置中心解析样式
