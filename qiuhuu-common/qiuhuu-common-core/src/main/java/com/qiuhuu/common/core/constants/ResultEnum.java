@@ -12,10 +12,20 @@ public enum ResultEnum {
      */
     OK(200,"success"),
 
+    /*****************系统错误************************/
+    /**
+     * 网关超时
+     */
+    GATEWAY_TIMEOUT(100001, "gateway_timeout"),
+    /**
+     * 服务降级
+     */
+    SERVICE_FALLBACK(100002,"service_fallback"),
     /**
      * 内部错误
      */
-    ERROR(400,"error");
+    ERROR(100000,"error");
+
 
     /**
      * 状态码

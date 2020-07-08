@@ -1,9 +1,11 @@
 package com.qiuhuu.gateway;
 
+import com.qiuhuu.gateway.filter.CustomGlobalFilter;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -18,5 +20,10 @@ import org.springframework.context.annotation.ComponentScan;
 public class GatewayApplication {
     public static void main(String[] args) {
         SpringApplication.run(GatewayApplication.class,args);
+    }
+
+    @Bean
+    public GlobalFilter customFilter() {
+        return new CustomGlobalFilter();
     }
 }
