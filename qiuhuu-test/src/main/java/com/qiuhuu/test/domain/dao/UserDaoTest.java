@@ -1,4 +1,4 @@
-package com.qiuhuu.gateway.domain.dao;
+package com.qiuhuu.test.domain.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 

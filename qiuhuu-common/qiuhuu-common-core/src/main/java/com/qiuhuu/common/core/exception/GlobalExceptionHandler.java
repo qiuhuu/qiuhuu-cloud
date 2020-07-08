@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -23,12 +22,11 @@ public class GlobalExceptionHandler {
     /**
      * 捕获自定义异常
      * @param ex
-     * @param request
      * @param response
      * @return
      */
     @ExceptionHandler({CloudException.class})
-    public static ResultBody exception(CloudException ex, HttpServletRequest request, HttpServletResponse response) {
+    public static ResultBody exception(CloudException ex, HttpServletResponse response) {
         //todo 后续改进
         ResultBody resultBody = new ResultBody().failure(400,ex.getMessage());
         response.setStatus(resultBody.getHttpStatus());
@@ -39,12 +37,11 @@ public class GlobalExceptionHandler {
     /**
      * 捕获其他异常
      * @param ex
-     * @param request
      * @param response
      * @return
      */
     @ExceptionHandler(Exception.class)
-    public static ResultBody exception(Exception ex, HttpServletRequest request, HttpServletResponse response) {
+    public static ResultBody exception(Exception ex, HttpServletResponse response) {
         //todo 后续改进
         ResultBody resultBody = new ResultBody().failure(400,ex.getMessage());
         response.setStatus(resultBody.getHttpStatus());

@@ -1,4 +1,4 @@
-package com.qiuhuu.gateway.domain.entity;
+package com.qiuhuu.test.domain.entity;
 
 import lombok.Data;
 

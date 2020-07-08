@@ -1,6 +1,6 @@
-package com.qiuhuu.gateway.domain.dao;
+package com.qiuhuu.test.domain.dao;
 
-import com.qiuhuu.gateway.domain.entity.User;
+import com.qiuhuu.test.domain.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

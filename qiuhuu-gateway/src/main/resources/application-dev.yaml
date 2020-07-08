@@ -23,18 +23,29 @@ spring:
         max-idle: 100
         min-idle: 0
         time-between-eviction-runs: 30000
-  jpa:
-    hibernate.ddl-auto: update
-    show-sql: true
-  #gateway设置
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名称进行路由
       #路由设置
-#      routes:
-#        - id: before_route
-#          uri: https://example.org
-#          predicates:
-#            - Before=2017-01-20T17:42:47.789-07:00[America/Denver]
+      routes:
+        - id: test_route
+          uri: lb://qiuhuu-test
+          predicates:
+            - Path=/test/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: testFallback
+                fallbackUri: forward:/fallback/test
+            # redis限流 ， filter名称必须是RequestRateLimiter
+            - name: RequestRateLimiter
+              args:
+                # 使用SpEL名称引用Bean，与上面新建的RateLimiterConfig类中的bean的name相同
+                key-resolver: '#{@ipKeyResolver}'
+                # 每秒最大访问次数
+                redis-rate-limiter.replenishRate: 100
+                # 令牌桶最大容量
+                redis-rate-limiter.burstCapacity: 200

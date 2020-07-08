@@ -1,4 +1,15 @@
 mybatis:
-  type-aliases-package: com.qiuhuu.gateway.domain.entity
+  type-aliases-package: com.qiuhuu.gaetway.domain.entity
   mapper-locations: classpath:mybatis/mapping/*.xml
   config-location: classpath:mybatis/mybatis.xml
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 3000
+
+
