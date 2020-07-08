@@ -13,7 +13,8 @@ spring:
 #        hostname: 127.0.0.1    #配置实例地址
         register: true  #自动注册
         service-name: ${spring.application.name} #实例名称
-      host: 192.168.154.99 #consul地址
+        tags: urlprefix-/${spring.application.name}
+      host: 127.0.0.1 #consul地址
       port: 8500  #consul端口
       config:
         enabled: true  #是否开启配置中心
