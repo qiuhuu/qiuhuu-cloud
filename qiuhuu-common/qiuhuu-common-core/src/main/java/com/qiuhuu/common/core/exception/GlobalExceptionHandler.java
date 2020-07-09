@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
  * @date : 2020-07-08 11-06
  */
 @ControllerAdvice
-@ResponseBody
 @Slf4j
 public class GlobalExceptionHandler {
 

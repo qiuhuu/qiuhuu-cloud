@@ -1,4 +1,4 @@
-package com.qiuhuu.common.core.config;
+package com.qiuhuu.common.starter.config;
 
 import com.qiuhuu.common.core.utils.SpringContextHolder;
 import lombok.extern.slf4j.Slf4j;

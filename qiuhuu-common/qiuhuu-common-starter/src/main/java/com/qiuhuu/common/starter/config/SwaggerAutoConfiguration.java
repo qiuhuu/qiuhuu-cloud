@@ -1,4 +1,4 @@
-//package com.qiuhuu.common.core.config;
+//package com.qiuhuu.common.starter.config;
 //
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;

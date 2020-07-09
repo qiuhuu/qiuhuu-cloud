@@ -2,7 +2,14 @@ mybatis:
   type-aliases-package: com.qiuhuu.gaetway.domain.entity
   mapper-locations: classpath:mybatis/mapping/*.xml
   config-location: classpath:mybatis/mybatis.xml
-
+management:
+  endpoint:
+    gateway:
+      enabled: true #开启后可以获取每个路由更多详细信息
+  endpoints:
+    web:
+      exposure:
+        include: gateway
 hystrix:
   command:
     default:

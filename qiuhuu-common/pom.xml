@@ -6,7 +6,6 @@
         <groupId>com.qiuhuu</groupId>
         <artifactId>qiuhuu-main</artifactId>
         <version>1.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>qiuhuu-common</artifactId>
     <packaging>pom</packaging>

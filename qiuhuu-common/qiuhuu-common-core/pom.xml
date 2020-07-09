@@ -6,10 +6,9 @@
         <groupId>com.qiuhuu</groupId>
         <artifactId>qiuhuu-common</artifactId>
         <version>1.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>qiuhuu-common-core</artifactId>
-    <version>${qiuhuu-common.version}</version>
+    <version>1.0.0</version>
     <name>qiuhuu-common-core</name>
     <description>通用组件核心</description>
     <packaging>jar</packaging>
@@ -109,17 +108,5 @@
             <version>${alibaba.fastjson.version}</version>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>

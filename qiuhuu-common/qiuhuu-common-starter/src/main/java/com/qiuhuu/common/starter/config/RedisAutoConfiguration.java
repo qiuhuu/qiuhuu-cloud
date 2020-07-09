@@ -1,4 +1,4 @@
-package com.qiuhuu.common.core.config;
+package com.qiuhuu.common.starter.config;
 
 import com.qiuhuu.common.core.serializer.FastJson2JsonRedisSerializer;
 import com.qiuhuu.common.core.template.RedisTemplate;

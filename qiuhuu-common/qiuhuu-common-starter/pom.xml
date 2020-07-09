@@ -6,11 +6,10 @@
         <groupId>com.qiuhuu</groupId>
         <artifactId>qiuhuu-common</artifactId>
         <version>1.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>qiuhuu-common-starter</artifactId>
-<!--    <version>1.0.0</version>-->
     <name>qiuhuu-common-starter</name>
+    <packaging>jar</packaging>
     <description>通用组件启动器</description>
 
     <dependencies>

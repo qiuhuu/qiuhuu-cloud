@@ -1,1 +1,3 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.qiuhuu.common.core.config.RedisAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.qiuhuu.common.starter.config.RedisAutoConfiguration,\
+  com.qiuhuu.common.starter.config.AutoConfiguration
