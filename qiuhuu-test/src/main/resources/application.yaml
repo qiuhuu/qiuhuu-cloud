@@ -1,9 +1,27 @@
+#logging:
+#  level:
+#    root: debug
 #management:
 #  endpoint:
 #    health:
 #      show-details: always
+spring:
+  devtools:
+    restart:
+      additional-paths: src/main/java
+      enabled: true
+
 mybatis:
   type-aliases-package: com.qiuhuu.test.domain.entity
   mapper-locations: classpath:mybatis/mapping/*.xml
   config-location: classpath:mybatis/mybatis.xml
-
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
