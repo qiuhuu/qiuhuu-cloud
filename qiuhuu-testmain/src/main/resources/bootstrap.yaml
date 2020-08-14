@@ -1,10 +1,4 @@
-server:
-  port: 8950
 spring:
-  profiles:
-    active: dev
-  application:
-    name: qiuhuu-testmain
   cloud:
     consul:
       host: 127.0.0.1 #consul地址192.168.154.99 59.110.215.180

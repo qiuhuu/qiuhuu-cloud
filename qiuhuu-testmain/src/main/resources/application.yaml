@@ -5,7 +5,13 @@
 #  endpoint:
 #    health:
 #      show-details: always
+server:
+  port: 8950
 spring:
+  profiles:
+    active: dev
+  application:
+    name: qiuhuu-testmain
   devtools:
     restart:
       additional-paths: src/main/java

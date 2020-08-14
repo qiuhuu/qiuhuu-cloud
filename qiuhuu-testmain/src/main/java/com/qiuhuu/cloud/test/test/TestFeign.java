@@ -1,7 +1,5 @@
 package com.qiuhuu.cloud.test.test;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.qiuhuu.cloud.common.core.model.ResultBody;
 import com.qiuhuu.cloud.test.test.hystrix.TestFeignHystrix;
 import org.springframework.cloud.openfeign.FeignClient;
