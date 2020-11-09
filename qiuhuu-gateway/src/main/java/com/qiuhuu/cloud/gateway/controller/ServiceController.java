@@ -29,16 +29,16 @@ public class ServiceController {
 
     @ApiOperation("获取所有服务")
     @GetMapping
-    public ResultBody getService(){
+    public ResultBody<List<String>> getService(){
         List<String> services = discoveryClient.getServices();
-        return new ResultBody().success(ResultEnum.OK,services);
+        return new ResultBody<List<String>>().success(ResultEnum.OK,services);
     }
 
     @ApiOperation("获取服务的全部实例")
     @GetMapping("{serviceName}")
-    public ResultBody getServiceInstances(@PathVariable String serviceName){
+    public ResultBody<List<ServiceInstance>> getServiceInstances(@PathVariable String serviceName){
         List<ServiceInstance> instances = discoveryClient.getInstances(serviceName);
-        return new ResultBody().success(ResultEnum.OK,instances);
+        return new ResultBody<List<ServiceInstance>>().success(ResultEnum.OK,instances);
     }
 
 }

@@ -1,8 +1,10 @@
 package com.qiuhuu.cloud.gateway;
 
+import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import com.qiuhuu.cloud.gateway.filter.CustomGlobalFilter;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -28,5 +30,15 @@ public class GatewayApplication {
     @Bean
     public GlobalFilter customFilter() {
         return new CustomGlobalFilter();
+    }
+
+    @Bean
+    public ServletRegistrationBean getServlet(){
+        HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
+        ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
+        registrationBean.setLoadOnStartup(1);
+        registrationBean.addUrlMappings("/hystrix.stream");
+        registrationBean.setName("HystrixMetricsStreamServlet");
+        return registrationBean;
     }
 }

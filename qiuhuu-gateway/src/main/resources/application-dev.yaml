@@ -49,3 +49,13 @@ spring:
 #                redis-rate-limiter.replenishRate: 100
 #                # 令牌桶最大容量
 #                redis-rate-limiter.burstCapacity: 200
+        - id: oauth_route
+            uri: lb://qiuhuu-oauth
+            predicates:
+              - Path=/oauth/**
+            filters:
+              - StripPrefix=1
+              - name: Hystrix
+                args:
+                  name: oauthFallback
+                  fallbackUri: forward:/fallback/oauth

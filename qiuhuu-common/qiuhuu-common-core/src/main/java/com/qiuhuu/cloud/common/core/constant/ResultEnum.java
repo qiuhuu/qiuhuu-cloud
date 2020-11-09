@@ -21,6 +21,8 @@ public enum ResultEnum {
      * 服务降级
      */
     SERVICE_FALLBACK(100002,"service_fallback"),
+
+    PARAMETER_VERIFICATION_ERROR(100003,"参数校验错误"),
     /**
      * 内部错误
      */

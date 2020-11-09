@@ -1,0 +1,17 @@
+server:
+  port: 8960
+spring:
+  application:
+    name: qiuhuu-oauth
+  profiles:
+    active: dev
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000

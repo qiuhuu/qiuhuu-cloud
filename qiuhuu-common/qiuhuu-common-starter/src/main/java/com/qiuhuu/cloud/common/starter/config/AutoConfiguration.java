@@ -21,7 +21,7 @@ public class AutoConfiguration {
      */
     @Bean
     @ConditionalOnMissingBean(BCryptPasswordEncoder.class)
-    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+    public BCryptPasswordEncoder passwordEncoder() {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         log.info("BCryptPasswordEncoder [{}]", encoder);
         return encoder;

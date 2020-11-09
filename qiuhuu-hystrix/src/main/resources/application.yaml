@@ -1,0 +1,6 @@
+server:
+  port: 9528
+
+spring:
+  application:
+    name: qiuhuu-hystrix
